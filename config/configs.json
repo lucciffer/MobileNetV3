@@ -1,0 +1,17 @@
+{
+    "model": "large",
+    "height": 224,
+    "width": 224,
+    "class_number": 4,
+    "learning_rate": 0.0001,
+    "batch": 16,
+    "epochs": 25,
+    "train_dir": "../input/siim-covid19-detection/train",
+    "eval_dir": "../input/siim-covid19-detection/test",
+    "save_dir": "./save",
+    "weights": ""
+}
+
+
+
+
