@@ -4,7 +4,7 @@
 """
 
 
-from keras.layers import Conv2D, DepthwiseConv2D, Dense, GlobalAveragePooling2D
+from keras.layers import Conv2D, DepthwiseConv2D, Dense, GlobalAveragePooling2D, Dropout
 from keras.layers import Activation, BatchNormalization, Add, Multiply, Reshape
 
 from keras import backend as K
@@ -90,6 +90,7 @@ class MobileNetBase:
         x = GlobalAveragePooling2D()(inputs)
         x = Dense(input_channels, activation='relu')(x)
         x = Dense(input_channels, activation='hard_sigmoid')(x)
+        x = Dropout(0.2)(x)
         x = Reshape((1, 1, input_channels))(x)
         x = Multiply()([inputs, x])
 
